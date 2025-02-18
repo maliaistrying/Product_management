@@ -1,0 +1,53 @@
+/* Signup.module.css */
+
+/* Input field styling */
+.inputField {
+    @apply w-full p-4 border-2 border-gray-300 rounded-lg focus:ring-4 focus:ring-purple-600 focus:outline-none text-lg;
+  }
+  
+  /* Error message styling */
+  .errorMessage {
+    @apply text-red-500 text-sm mt-1;
+  }
+  
+  /* Submit button styling */
+  .submitButton {
+    @apply w-full bg-purple-600 text-white p-3 rounded-lg hover:bg-purple-700 transition duration-300 font-semibold text-lg;
+  }
+  
+  /* Container for the form */
+  .formContainer {
+    @apply max-w-md mx-auto p-8 bg-gradient-to-r from-purple-100 via-purple-300 to-purple-500 rounded-lg shadow-xl border border-gray-300;
+  }
+  
+  /* Title styling */
+  .title {
+    @apply text-3xl font-extrabold mb-6 text-center text-white;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Form spacing between fields */
+  .formSpacing {
+    @apply space-y-6;
+  }
+  
+  /* Focus on input fields with a purple glow */
+  .inputField:focus {
+    @apply border-purple-500;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 640px) {
+    .formContainer {
+      @apply p-6; /* Reduced padding on small screens */
+    }
+    
+    .title {
+      @apply text-2xl;
+    }
+    
+    .submitButton {
+      @apply p-2 text-base;
+    }
+  }
+  
