@@ -3,6 +3,7 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
+import styles from "../styles/Login.module.css";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -21,30 +22,68 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h2 className="text-2xl font-bold mb-4">Login</h2>
-      {error && <p className="text-red-500 mb-2">{error}</p>}
-      <form onSubmit={handleLogin} className="flex flex-col space-y-4 w-80">
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="border p-2 rounded"
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="border p-2 rounded"
-          required
-        />
-        <button type="submit" className="bg-blue-500 text-white p-2 rounded">
-          Login
-        </button>
-      </form>
+    <div className="h-screen flex justify-center items-center bg-gray-50">
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <img className={styles.logo} src="/images/logo-2.png" alt="logo" />
+          <h2 className={styles.title}>Login to your account</h2>
+        </div>
+        <div className={styles.formWrapper}>
+          <form onSubmit={handleLogin} className={styles.formSpacing}>
+            <div>
+              <label className={styles.label}>Email Address</label>
+              <div className="mt-2">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className={styles.inputField}
+                  required
+                />
+              </div>
+              {/* {errors.email && (
+                <p className={styles.errorMessage}>{errors.email.message}</p>
+              )} */}
+            </div>
+            <div>
+              <div className={styles.passwordLabelContainer}>
+                <label className={styles.label}>Password</label>
+                <div className="text-sm">
+                  <a href="#" className={styles.ForgotPasswordLink}>
+                    Forgot password?
+                  </a>
+                </div>
+              </div>
+              <div className="mt-2">
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className={styles.inputField}
+                  required
+                />
+              </div>
+              {/* {errors.password && (
+                <p className={styles.errorMessage}>{errors.password.message}</p>
+              )} */}
+            </div>
+            <button type="submit" className={styles.submitButton}>
+              Login
+            </button>
+
+            {error && <p className={styles.errorMessage}>{error}</p>}
+          </form>
+
+          <p className={styles.footer}>
+            Not a member?{" "}
+            <a href="/signup" className={styles.link}>
+              Register Now
+            </a>
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
