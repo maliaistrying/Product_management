@@ -1,0 +1,81 @@
+/* General container styling */
+.container {
+  @apply flex min-h-screen flex-col justify-center px-6 py-12 lg:px-8 bg-white sm:max-w-md sm:mx-auto;
+  margin-top: 80px; /* Adds space for header */
+}
+
+/* Header with logo and title */
+.header {
+  @apply sm:mx-auto sm:w-full sm:max-w-sm text-center;
+}
+
+.logo {
+  @apply mx-auto size-16 w-auto;
+}
+
+.title {
+  @apply mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900;
+}
+
+/* Form container styling */
+.formWrapper {
+  @apply mt-10 sm:mx-auto sm:w-full sm:max-w-sm;
+}
+
+/* Form spacing */
+.formSpacing {
+  @apply space-y-6;
+}
+
+/* Label styling */
+.label {
+  @apply block text-sm/6 font-medium text-gray-900;
+}
+
+/* Input field styling */
+.inputField {
+  @apply block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2
+  focus:outline-offset-2 focus:outline-indigo-600 sm:text-sm/6;
+}
+
+.passwordLabelContainer {
+  @apply flex justify-between items-center;
+}
+
+.ForgotPasswordLink {
+  @apply font-semibold text-indigo-600 hover:text-indigo-500;
+}
+
+/* Error message styling */
+.errorMessage {
+  @apply text-red-500 text-sm mt-1;
+}
+
+/* Submit button styling */
+.submitButton {
+  @apply flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-indigo-600;
+}
+
+/* Footer link for existing members */
+.footer {
+  @apply mt-10 text-center text-sm text-gray-500;
+}
+
+.link {
+  @apply font-semibold text-indigo-600 hover:text-indigo-500;
+}
+
+/* Responsive styling for small screens */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4; /* Reduced padding on small screens */
+  }
+
+  .title {
+    @apply text-xl;
+  }
+
+  .submitButton {
+    @apply p-2 text-base;
+  }
+}
