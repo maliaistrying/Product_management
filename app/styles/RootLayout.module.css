@@ -20,6 +20,7 @@
 
 .logoLink {
   @apply -m-1.5 p-1.5;
+  text-decoration: none;
 }
 
 .name {
@@ -48,10 +49,12 @@
 
 .link {
   @apply text-sm font-semibold text-gray-900;
+  text-decoration: none;
 }
 
 .authLinks {
   @apply hidden lg:flex lg:flex-1 lg:justify-end gap-x-6;
+  text-decoration: none;
 }
 
 .dialog {
@@ -68,6 +71,7 @@
 
 .dialogPanelHeader {
   @apply flex items-center justify-between;
+  text-decoration: none;
 }
 
 .dialogPanelButton {
@@ -76,26 +80,32 @@
 
 .dialogLinksContainer {
   @apply mt-6 flow-root;
+  text-decoration: none;
 }
 
 .dialogLinks {
   @apply -my-6 divide-y divide-gray-500/10;
+  text-decoration: none;
 }
 
 .pagesLinks {
   @apply space-y-2 py-6;
+  text-decoration: none;
 }
 
 .dialogLink {
   @apply block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50;
+  text-decoration: none;
 }
 
 .dialogAuthLinks {
   @apply py-6;
+  text-decoration: none;
 }
 
 .dialogAuthLink {
   @apply block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-900 hover:bg-gray-50;
+  text-decoration: none;
 }
 
 /* Home */
@@ -105,4 +115,8 @@
 
 .homeHeader {
   @apply text-3xl font-bold;
+}
+
+.footer {
+  bottom: 0;
 }

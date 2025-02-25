@@ -9,6 +9,7 @@ import "./styles/globals.css";
 import styles from "./styles/RootLayout.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 export default function RootLayout({ children }) {
   const pathname = usePathname();
 
@@ -39,7 +40,7 @@ export default function RootLayout({ children }) {
           <header className={styles.header}>
             <nav aria-label="Global" className={styles.nav}>
               <div className={styles.logo}>
-                <Link href="/" className={styles.logoLink}>
+                <Link href="/dashboard" className={styles.logoLink}>
                   <span className={styles.name}>Product Management System</span>
                   <div className={styles.logoContainer}>
                     <img
@@ -62,8 +63,8 @@ export default function RootLayout({ children }) {
                 </button>
               </div>
               <div className={styles.navLinks}>
-                <Link href="/" className={styles.link}>
-                  Home
+                <Link href="/dashboard" className={styles.link}>
+                  Dashboard
                 </Link>
                 <Link href="/products" className={styles.link}>
                   Products
@@ -138,8 +139,8 @@ export default function RootLayout({ children }) {
                 <div className={styles.dialogLinksContainer}>
                   <div className={styles.dialogLinks}>
                     <div className={styles.pagesLinks}>
-                      <Link href="/" className={styles.dialogLink}>
-                        Home
+                      <Link href="/dashboard" className={styles.dialogLink}>
+                        Dashboard
                       </Link>
                       <Link href="/products" className={styles.dialogLink}>
                         Products
@@ -163,6 +164,11 @@ export default function RootLayout({ children }) {
           </header>
         )}
         <main>{children}</main>
+        <footer className="py-3 my-4 footer">
+          <p className="text-center text-body-secondary">
+            &copy; 2024 Product Managment System
+          </p>
+        </footer>
       </body>
     </html>
   );
