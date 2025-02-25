@@ -1,3 +1,5 @@
+/* ProductsList.module.css */
+
 /* General container styling */
 .productsContainer {
   @apply p-6 max-w-4xl mx-auto;

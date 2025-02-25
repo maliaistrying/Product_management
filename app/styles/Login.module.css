@@ -1,7 +1,7 @@
 /* General container styling */
 .container {
   @apply flex min-h-screen flex-col justify-center px-6 py-12 lg:px-8 bg-white sm:max-w-md sm:mx-auto;
-  margin-top: 80px; /* Adds space for header */
+  /*margin-top: 80px;  Adds space for header --- No need for the header */
 }
 
 /* Header with logo and title */
@@ -63,19 +63,4 @@
 
 .link {
   @apply font-semibold text-indigo-600 hover:text-indigo-500;
-}
-
-/* Responsive styling for small screens */
-@media (max-width: 640px) {
-  .container {
-    @apply px-4; /* Reduced padding on small screens */
-  }
-
-  .title {
-    @apply text-xl;
-  }
-
-  .submitButton {
-    @apply p-2 text-base;
-  }
 }

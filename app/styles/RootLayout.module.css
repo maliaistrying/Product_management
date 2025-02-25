@@ -1,108 +1,122 @@
-/* RootLayout.module.css */
-
-/* Header container */
 .header {
-  @apply flex items-center justify-between px-6 py-4 bg-gray-800 text-white; /* Dark gray header */
-  position: relative;
-  z-index: 10;
+  @apply bg-white;
 }
 
-/* Logo styling */
+.nav {
+  @apply mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8;
+}
+
 .logo {
-  @apply flex items-center space-x-2;
-  flex-shrink: 0;
-}
-
-.logoLink {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.name {
-  @apply text-xl font-semibold; /* Smaller text for name */
+  @apply flex lg:flex-1;
 }
 
 .logoContainer {
-  @apply w-8 h-8; /* Smaller size for logo container */
-  margin-right: 8px; /* Space between logo and text */
+  @apply flex items-center gap-2;
+}
+
+.logoContainer p {
+  @apply text-sm font-medium text-gray-700;
+}
+
+.logoLink {
+  @apply -m-1.5 p-1.5;
+  text-decoration: none;
+}
+
+.name {
+  @apply sr-only;
 }
 
 .logoImage {
-  @apply w-full h-full object-contain; /* Keep logo size proportional */
+  @apply h-8 w-auto;
 }
 
-/* Navbar */
-.navbar {
-  @apply hidden sm:flex space-x-4 ml-auto;
-}
-
-.navbar .link {
-  @apply text-white text-lg hover:text-purple-300; /* Set link color to white */
-}
-
-.buttons {
-  @apply hidden sm:flex space-x-4 ml-auto;
-}
-
-.button {
-  @apply bg-[rgb(79,70,229)] text-white py-2 px-4 rounded-md hover:bg-[rgb(67,56,229)]; /* Purple button with hover effect */
+.menu {
+  @apply flex lg:hidden;
 }
 
 .menuButton {
-  @apply sm:hidden text-white text-xl;
+  @apply -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700;
+}
+
+.menuIcon {
+  @apply size-6;
+}
+
+.navLinks {
+  @apply hidden lg:flex lg:gap-x-12;
+}
+
+.link {
+  @apply text-sm font-semibold text-gray-900;
+  text-decoration: none;
+}
+
+.authLinks {
+  @apply hidden lg:flex lg:flex-1 lg:justify-end gap-x-6;
+  text-decoration: none;
 }
 
 .dialog {
-  @apply fixed inset-0 bg-black bg-opacity-50 z-20;
+  @apply lg:hidden;
+}
+
+.d {
+  @apply fixed inset-0 z-10;
 }
 
 .dialogPanel {
-  @apply fixed top-0 right-0 w-2/3 bg-white h-full p-6 space-y-6 z-30;
+  @apply fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10;
 }
 
 .dialogPanelHeader {
-  @apply flex justify-between items-center;
+  @apply flex items-center justify-between;
+  text-decoration: none;
 }
 
 .dialogPanelButton {
-  @apply text-2xl text-black;
+  @apply -m-2.5 rounded-md p-2.5 text-gray-700;
 }
 
 .dialogLinksContainer {
-  @apply space-y-4 mt-6;
+  @apply mt-6 flow-root;
+  text-decoration: none;
+}
+
+.dialogLinks {
+  @apply -my-6 divide-y divide-gray-500/10;
+  text-decoration: none;
+}
+
+.pagesLinks {
+  @apply space-y-2 py-6;
+  text-decoration: none;
 }
 
 .dialogLink {
-  @apply text-gray-900 text-xl block hover:text-[rgb(79,70,229)]; /* Dark gray text with purple hover */
+  @apply block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50;
+  text-decoration: none;
+}
+
+.dialogAuthLinks {
+  @apply py-6;
+  text-decoration: none;
 }
 
 .dialogAuthLink {
-  @apply text-[rgb(79,70,229)] font-semibold block hover:text-[rgb(67,56,229)]; /* Purple text with hover effect */
+  @apply block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-900 hover:bg-gray-50;
+  text-decoration: none;
 }
 
-/* Additional styles */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh; /* Full viewport height */
-  background-color: #e0e7ff; /* Light gray background that matches the purple */
-  padding: 20px;
-  font-family: Arial, sans-serif; /* Font style */
+/* Home */
+.home {
+  @apply flex flex-col items-center justify-center min-h-screen space-y-4;
 }
 
-.mainContent {
-  background-color: #ffffff; /* White background for main content */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 40px; /* Padding inside the main content */
-  text-align: center; /* Center the text */
+.homeHeader {
+  @apply text-3xl font-bold;
 }
 
-.mainTitle {
-  color: rgb(79, 70, 229); /* Updated to medium purple text */
-  font-size: 24px; /* Font size for title */
-  margin: 0; /* Remove default margin */
+.footer {
+  bottom: 0;
 }

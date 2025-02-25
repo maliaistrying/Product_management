@@ -27,7 +27,13 @@ export default function LoginForm() {
         data.email,
         data.password
       );
-      console.log("User logged in:", userCredential.user);
+      const user = userCredential.user;
+
+      console.log("User logged in:", user);
+
+      // Store user email in localStorage
+      localStorage.setItem("user", JSON.stringify({ email: user.email }));
+
       router.push("/dashboard");
     } catch (err) {
       console.error("Login error:", err.message);
