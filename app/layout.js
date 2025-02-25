@@ -1,19 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import "./styles/globals.css";
 import styles from "./styles/RootLayout.module.css";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 export default function RootLayout({ children }) {
   const pathname = usePathname();
 
   const excludePaths = pathname === "/login" || pathname === "/signup";
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const [user, setUser] = useState(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+    router.push("/login");
+  };
 
   return (
     <html lang="en">
@@ -56,12 +73,36 @@ export default function RootLayout({ children }) {
                 </Link>
               </div>
               <div className={styles.authLinks}>
-                <Link href="/signup" className={styles.link}>
+                {/* <Link href="/signup" className={styles.link}>
                   Sign Up
                 </Link>
                 <Link href="/login" className={styles.link}>
                   Log in <span aria-hidden="true">&rarr;</span>
-                </Link>
+                </Link> */}
+                {user ? (
+                  <div id="navbarNavDarkDropdown">
+                    <ul>
+                      <li className="nav-item dropdown">
+                        <button
+                          className="dropdown-toggle"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          {user.email}
+                        </button>
+                        <ul className="dropdown-menu dropdown-menu-dark">
+                          <li className={styles.link}>
+                            <a onClick={handleLogout} className="dropdown-item">
+                              Logout <span aria-hidden="true">&rarr;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
             </nav>
             <Dialog
@@ -108,12 +149,12 @@ export default function RootLayout({ children }) {
                       </Link>
                     </div>
                     <div className={styles.dialogAuthLinks}>
-                      <Link href="/signup" className={styles.dialogAuthLink}>
-                        Sign Up
-                      </Link>
-                      <Link href="/login" className={styles.dialogAuthLink}>
-                        Log in
-                      </Link>
+                      <button
+                        onClick={handleLogout}
+                        className={styles.dialogAuthLink}
+                      >
+                        Logout
+                      </button>
                     </div>
                   </div>
                 </div>

@@ -28,7 +28,7 @@ export default function SignupForm() {
         data.password
       );
       console.log("User signed up:", userCredential.user);
-      router.push("/dashboard");
+      router.push("/login");
     } catch (err) {
       console.error("Signup error:", err.message);
       setError(err.message);
@@ -92,7 +92,7 @@ export default function SignupForm() {
 
             {/* Submit Button */}
             <button type="submit" className={styles.submitButton}>
-              Sign Up
+              Sign up
             </button>
 
             {/* Error Message */}
@@ -102,7 +102,7 @@ export default function SignupForm() {
           <p className={styles.footer}>
             Already a member?{" "}
             <a href="/login" className={styles.link}>
-              Sign In
+              login
             </a>
           </p>
         </div>

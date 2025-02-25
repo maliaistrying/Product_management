@@ -1,4 +1,4 @@
-/* Products.css */
+/* ProductsList.module.css */
 
 /* General container styling */
 .productsContainer {
@@ -7,7 +7,7 @@
 
 /* Header styling */
 .productsHeader {
-  @apply flex justify-between items-center mb-6;
+  @apply flex justify-between items-center mb-20;
 }
 
 .productsTitle {
@@ -71,4 +71,19 @@
 /* Edit link */
 .editLink {
   @apply text-indigo-600 font-semibold hover:underline;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .productsTitle {
+    @apply text-2xl;
+  }
+
+  .productsSubtitle {
+    @apply text-xs;
+  }
+
+  .addProductButton {
+    @apply w-full;
+  }
 }
