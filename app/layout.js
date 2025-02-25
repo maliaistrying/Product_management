@@ -8,7 +8,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import "./styles/globals.css";
 import styles from "./styles/RootLayout.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
@@ -19,6 +19,10 @@ export default function RootLayout({ children }) {
 
   const [user, setUser] = useState(null);
   const router = useRouter();
+
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
