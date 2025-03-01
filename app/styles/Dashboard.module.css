@@ -1,0 +1,31 @@
+.dashboardContainer {
+  @apply p-6 max-w-4xl mx-auto;
+}
+
+.dashboardHeader {
+  @apply flex justify-between items-center mb-20;
+}
+
+.title {
+  @apply text-3xl font-bold text-gray-800;
+}
+
+.subtitle {
+  @apply text-sm text-gray-500;
+}
+
+.filterButton {
+  @apply bg-gray-200 text-gray-600 px-4 py-2 rounded-md shadow-md transition-all;
+}
+
+.listItem {
+  @apply w-full ml-0;
+}
+
+.filtersList {
+  @apply absolute mt-2 w-48 bg-white border rounded-md shadow-lg z-10;
+}
+
+.filter {
+  @apply w-full px-4 py-2 text-left hover:bg-gray-100;
+}
